@@ -6,13 +6,13 @@ import firebaseAppletConfig from '../firebase-applet-config.json';
 const isCustomEnv = !!import.meta.env.VITE_FIREBASE_PROJECT_ID;
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || firebaseAppletConfig.apiKey,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || firebaseAppletConfig.authDomain,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || firebaseAppletConfig.projectId,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || firebaseAppletConfig.storageBucket,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || firebaseAppletConfig.messagingSenderId,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || firebaseAppletConfig.appId,
-  firestoreDatabaseId: import.meta.env.VITE_FIREBASE_DATABASE_ID || (isCustomEnv ? '(default)' : (firebaseAppletConfig.firestoreDatabaseId || '(default)'))
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyBWkVODKnGrnTcBrj60TDaD-T0xZZZNvbQ",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "rentradar-cbm2i.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "rentradar-cbm2i",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "rentradar-cbm2i.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "583643822911",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:583643822911:web:afcce9efe654a8e282f18a",
+  firestoreDatabaseId: import.meta.env.VITE_FIREBASE_DATABASE_ID || '(default)'
 };
 
 const app = initializeApp(firebaseConfig);
