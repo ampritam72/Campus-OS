@@ -3,6 +3,8 @@ import { getFirestore } from 'firebase/firestore';
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, User } from 'firebase/auth';
 import firebaseAppletConfig from '../firebase-applet-config.json';
 
+const isCustomEnv = !!import.meta.env.VITE_FIREBASE_PROJECT_ID;
+
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || firebaseAppletConfig.apiKey,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || firebaseAppletConfig.authDomain,
@@ -10,7 +12,7 @@ const firebaseConfig = {
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || firebaseAppletConfig.storageBucket,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || firebaseAppletConfig.messagingSenderId,
   appId: import.meta.env.VITE_FIREBASE_APP_ID || firebaseAppletConfig.appId,
-  firestoreDatabaseId: import.meta.env.VITE_FIREBASE_DATABASE_ID || firebaseAppletConfig.firestoreDatabaseId || '(default)'
+  firestoreDatabaseId: import.meta.env.VITE_FIREBASE_DATABASE_ID || (isCustomEnv ? '(default)' : (firebaseAppletConfig.firestoreDatabaseId || '(default)'))
 };
 
 const app = initializeApp(firebaseConfig);
