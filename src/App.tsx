@@ -29,6 +29,9 @@ import RoutineView from './components/RoutineView';
 // Icons
 import { LayoutDashboard, Calendar as CalendarIcon, BookOpen, FolderOpen, BarChart2, CreditCard, Brain, Rocket, Settings, Menu, X, Cpu, LogOut, ArrowLeft, User, Users, MessageSquare, AlertTriangle } from 'lucide-react';
 
+// Vercel Web Analytics
+import { Analytics } from '@vercel/analytics/react';
+
 // Default mock initial state to load app dynamically
 const defaultProfile: UserProfile = {
   name: "Ahnaf Shakil",
@@ -1021,6 +1024,9 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
 
     </div>
   );
